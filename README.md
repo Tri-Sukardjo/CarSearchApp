@@ -31,8 +31,6 @@ CarSearchApp/
 |   |   |-- Search.cshtml
 |-- Program.cs
 |-- appsettings.json
-|-- .gitignore
-|-- README.md
 CarSearchApp.Tests/
 |-- Controllers/
 |   |-- CarControllerTests.cs

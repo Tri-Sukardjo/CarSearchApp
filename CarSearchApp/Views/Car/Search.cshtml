@@ -1,0 +1,63 @@
+﻿@model List<Car>
+@{
+    var lengthValue = Context.Request.Query["Length"];
+    var weightValue = Context.Request.Query["Weight"];
+    var velocityValue = Context.Request.Query["Velocity"];
+    var colourValue = Context.Request.Query["Colour"];
+}
+
+<h1>Car Search</h1>
+<form method="get">
+    <label>Length:</label>
+    <input type="number" name="Length" value="@lengthValue" step="any" />
+    <br />
+
+    <label>Weight:</label>
+    <input type="number" name="Weight" value="@weightValue" step="any" />
+    <br />
+
+    <label>Velocity:</label>
+    <input type="number" name="Velocity" value="@velocityValue" step="any" />
+    <br />
+
+    <label>Colour:</label>
+    <input type="text" name="Colour" value="@colourValue" />
+    <br />
+    <br />
+    <button type="submit">Search</button>
+</form>
+
+<br />
+<h3>Available Car(s)</h3>
+@if (Model.Count == 0)
+{
+    <p>No Car Available</p>
+}
+else
+{
+    <table>
+        <tr>
+            <th>Length</th>
+            <th>Weight</th>
+            <th>Velocity</th>
+            <th>Colour</th>
+        </tr>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Length</td>
+                <td>@car.Weight</td>
+                <td>@car.Velocity</td>
+                <td>@car.Colour</td>
+            </tr>
+        }
+    </table>
+    <br />
+}
+<form method="get" action="/Car/Export">
+    <input type="hidden" name="Length" value="@lengthValue" />
+    <input type="hidden" name="Weight" value="@weightValue" />
+    <input type="hidden" name="Velocity" value="@velocityValue" />
+    <input type="hidden" name="Colour" value="@colourValue" />
+    <button type="submit">Export to XML</button>
+</form>

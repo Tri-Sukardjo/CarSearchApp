@@ -8,6 +8,8 @@ CarSearchApp is a simple .NET Core web application that allows users to search f
 - Export search results to XML.
 - ASP.NET Core MVC architecture.
 - Entity Framework Core for data access.
+- Unit Test using xUnit, Moq, and InMemoryDatabase
+
 
 ---
 
@@ -40,6 +42,20 @@ CarSearchApp.Tests/
 |   |-- CarServiceTests.cs
 
 ```
+
+---
+## Testing
+Unit tests are available in the `CarSearchApp.Tests/` directory. The tests use `xUnit`, `Moq`, and `InMemoryDatabase` to prove the implementation meet the requirement and to ensure we can prove software quality and execution.
+
+---
+## Screenshoot Examples
+### Search Screen without any filters:
+
+![image](https://github.com/user-attachments/assets/53c0e9be-d608-4451-b93a-748df69ba98a)
+
+### Search Screen with filtered result:
+
+![image](https://github.com/user-attachments/assets/fef301f2-dd83-4982-b841-6023fe6934f4)
 
 ---
 
@@ -98,11 +114,6 @@ Alternatively, if using Visual Studio:
 1. Open the solution (`CarSearchApp.sln`).
 2. Set `CarSearchApp` as the startup project.
 3. Press `F5` to build and run.
-
----
-
-## Testing
-Unit tests are available in the `CarSearchApp.Tests/` directory. The tests use `xUnit` and `Moq` to prove the implementation meet the requirement and to ensure we can prove software quality and execution.
 
 ---
 
